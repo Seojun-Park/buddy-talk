@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Stack } from "@mui/material";
 import { useAuthContext } from "../contexts/AuthContext";
 import { useEffect } from "react";
 
@@ -19,5 +19,13 @@ export const Sider = () => {
     }
   }, [isLoggedIn]);
 
-  return <Container>Sider</Container>;
+  return (
+    <Stack
+      sx={{
+        width: "25%",
+      }}
+    >
+      Sider
+    </Stack>
+  );
 };
