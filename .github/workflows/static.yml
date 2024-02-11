@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['build']
+    branches: ['master']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,6 +39,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Check current build
+        run: cd './dist' && ls -la
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
