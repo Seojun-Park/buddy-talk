@@ -7,5 +7,6 @@ export default defineConfig({
     cors: false,
     open: true,
   },
+  base: "/buddy-talk/",
   plugins: [react()],
 });
