@@ -73,9 +73,15 @@ export const AuthContextProvider: FC<AuthContextProviderProps> = ({
     if (token) {
       Kakao.API.request({
         url: "/v2/user/me",
-      }).then((res) => {
-        setMe(res);
-      });
+      })
+        .then((res) => {
+          setMe(res);
+        })
+        .catch((err) => {
+          console.error(err);
+          setIsLoggedIn(false);
+          setMe(undefined);
+        });
     }
   }, [token]);
 
