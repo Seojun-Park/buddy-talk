@@ -4,21 +4,16 @@ import App from "./App.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext.tsx";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: (
-        <AuthContextProvider>
-          <App />
-        </AuthContextProvider>
-      ),
-    },
-  ],
+const router = createBrowserRouter([
   {
-    basename: "/buddy-talk",
-  }
-);
+    path: "/",
+    element: (
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
+    ),
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
