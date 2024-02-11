@@ -1,4 +1,4 @@
-import { Layout } from "antd";
+import { Container } from "@mui/material";
 import { useAuthContext } from "../contexts/AuthContext";
 import { useEffect } from "react";
 
@@ -19,5 +19,5 @@ export const Sider = () => {
     }
   }, [isLoggedIn]);
 
-  return <Layout.Sider width="25%">Sider</Layout.Sider>;
+  return <Container>Sider</Container>;
 };

@@ -15,9 +15,9 @@ const router = createBrowserRouter(
       ),
     },
   ],
-  {
-    basename: "/buddy-talk",
-  }
+  // {
+  //   basename: "/buddy-talk",
+  // }
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

@@ -1,7 +1,7 @@
-import { Layout } from "antd";
 import { useAuthContext } from "../contexts/AuthContext";
-import { LogoutButton } from "../components";
+import { Footer, Header, LogoutButton } from "../components";
 import { Sider } from "../pages";
+import { Container } from "@mui/material";
 
 const AppLayout = () => {
   const { me } = useAuthContext();
@@ -11,27 +11,21 @@ const AppLayout = () => {
   }
 
   return (
-    <Layout>
-      <Layout.Header
-        style={{
-          backgroundColor: "green",
-        }}
-      >
-        Header
-      </Layout.Header>
-      <Layout>
+    <Container>
+      <Header />
+      <Container>
         <Sider />
-        <Layout.Content
+        <Container
           style={{
             backgroundColor: "red",
           }}
         >
           Content
-        </Layout.Content>
-      </Layout>
-      <Layout.Footer>Footer</Layout.Footer>
+        </Container>
+      </Container>
+      <Footer />
       <LogoutButton />
-    </Layout>
+    </Container>
   );
 };
 export default AppLayout;
