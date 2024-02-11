@@ -3,14 +3,18 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext.tsx";
+import { ThemeProvider } from "@emotion/react";
+import { themeOverrides } from "./theme.ts";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <AuthContextProvider>
-        <App />
-      </AuthContextProvider>
+      <ThemeProvider theme={themeOverrides}>
+        <AuthContextProvider>
+          <App />
+        </AuthContextProvider>
+      </ThemeProvider>
     ),
   },
 ]);

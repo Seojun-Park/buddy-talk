@@ -1,7 +1,8 @@
 import { useAuthContext } from "../contexts/AuthContext";
-import { Footer, Header, LogoutButton } from "../components";
-import { Sider } from "../pages";
-import { Container, Stack } from "@mui/material";
+import { Footer, Header } from "../components";
+import { Content, Sider } from "../pages";
+import { Stack } from "@mui/material";
+import { theme } from "../theme";
 
 const AppLayout = () => {
   const { me } = useAuthContext();
@@ -13,23 +14,22 @@ const AppLayout = () => {
   return (
     <Stack
       sx={{
-        height: "100vh",
+        height: "100dvh",
         width: "100vw",
+        backgroundColor: theme.light,
       }}
     >
       <Header />
-      <Stack direction={"row"}>
+      <Stack
+        direction={"row"}
+        sx={{
+          height: "80%",
+        }}
+      >
         <Sider />
-        <Container
-          style={{
-            backgroundColor: "red",
-          }}
-        >
-          Content
-        </Container>
+        <Content />
       </Stack>
       <Footer />
-      <LogoutButton />
     </Stack>
   );
 };
