@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Check current build
-        run: cd './dist' && ls -la
+        run: cd './dist/assets' && ls -la
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
