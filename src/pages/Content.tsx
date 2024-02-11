@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { FC, PropsWithChildren } from "react";
 import { TextBox } from "../components";
 
@@ -17,7 +17,13 @@ export const Content: FC<PropsWithChildren> = () => {
       >
         Content
       </Stack>
-      <TextBox />
+      <Box
+        sx={{
+          padding: "4px",
+        }}
+      >
+        <TextBox />
+      </Box>
     </Stack>
   );
 };
